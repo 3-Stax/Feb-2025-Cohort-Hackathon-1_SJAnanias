@@ -7,6 +7,7 @@
     <title>Stephanus James Ananias | Software Engineer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="assets/images/IMG_20220723_111446.jpg" as="image">
 </head>
 <body>
     <!-- Floating Contact Button -->
@@ -21,6 +22,10 @@
 
     <!-- Header -->
     <header>
+        <div class="header-bg">
+            <img loading="lazy" src="assets/images/IMG_20220723_111446.jpg" alt="" class="sr-only">
+            <div class="mask"></div>
+        </div>
         <div class="particles" id="particles"></div>
         <div class="header-content">
             <h1>Stephanus James Ananias</h1>
@@ -40,7 +45,9 @@
         <section id="summary" class="fade-in">
             <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
             <div class="section-content">
-                <p>Results-driven software engineer with expertise in full-stack development and GIS technologies. Passionate about creating efficient, scalable solutions with a focus on user experience and clean code architecture.</p>
+                <p>Results-driven Software Engineer with expertise in full-stack development and GIS technologies.
+                 Passionate about creating efficient, scalable solutions with a focus on user experience and clean 
+                 code architecture.</p>
             </div>
         </section>
 
@@ -50,7 +57,7 @@
             <div class="section-content">
                 <div class="experience-item">
                     <div class="job-title">GIS Data Capturer/Technician</div>
-                    <div class="company">Geocarta Consultants Namibia</div>
+                    <div class="company"><a href="https://geocarta.com.na/" target="_blank">Geocarta Consultants Namibia</a></div>
                     <div class="date">November 2014 - Present</div>
                     <ul class="responsibilities">
                         <li>Led a team of 5 field technicians in data collection and verification</li>
@@ -78,19 +85,15 @@
             <div class="section-content">
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h3>GeoMapper Pro</h3>
-                        <p>Web-based GIS platform with real-time data visualization</p>
-                        <a href="#" class="project-link">View Project</a>
+                        <h3>ArcGIS & ArcGIS PRO</h3>
+                        <p>Web-based GIS platform with real-time Cartograpghy and data visualization</p>
+                        <a href="assets/arcGIS/FarmS_DanevisV6r6.pdf" class="project-link">View Project</a>
                     </div>
+                   
                     <div class="project-card">
-                        <h3>Inventory Tracker</h3>
-                        <p>Full-stack application for asset management</p>
-                        <a href="#" class="project-link">View Project</a>
-                    </div>
-                    <div class="project-card">
-                        <h3>Portfolio Website</h3>
-                        <p>Modern responsive portfolio with 3D effects</p>
-                        <a href="#" class="project-link">View Project</a>
+                        <h3>Product Website</h3>
+                        <p>Modern responsive product website</p>
+                        <a href="https://github.com/3-Stax/comfort-cooling-repo.git" target="_blank" class="project-link">View Project</a>
                     </div>
                 </div>
             </div>
@@ -124,19 +127,19 @@
                     <div class="skill-category">
                         <h3>GIS</h3>
                         <ul class="skill-list">
-                            <li>ArcGIS</li>
+                            <li>ArcGIS Pro</li>
+                            <li>ArcCatalog</li>
+                            <li>ArcGIS 10.3.1 etc</li>
                             <li>QGIS</li>
-                            <li>GeoDjango</li>
-                            <li>Leaflet.js</li>
                         </ul>
                     </div>
                 </div>
 
                 <h3 style="margin-top: 2rem;">Technical Proficiency</h3>
                 <div class="skill-bar">
-                    <div class="skill-label">Python <span>90%</span></div>
+                    <div class="skill-label">Python <span>60%</span></div>
                     <div class="bar-container">
-                        <div class="bar" style="width: 90%;"></div>
+                        <div class="bar" style="width: 60%;"></div>
                     </div>
                 </div>
                 <div class="skill-bar">
@@ -146,9 +149,9 @@
                     </div>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-label">GIS Systems <span>80%</span></div>
+                    <div class="skill-label">GIS Systems <span>95%</span></div>
                     <div class="bar-container">
-                        <div class="bar" style="width: 80%;"></div>
+                        <div class="bar" style="width: 95%;"></div>
                     </div>
                 </div>
             </div>
@@ -159,9 +162,9 @@
             <h2><i class="fas fa-graduation-cap"></i> Education</h2>
             <div class="section-content">
                 <div class="education-item">
-                    <div class="degree">Bachelor of Science in Business Information Systems</div>
-                    <div class="university">International University of Management</div>
-                    <div class="date">2023 - 2025 (Expected)</div>
+                    <div class="degree">Bachelor of Science in Software Development</div>
+                    <div class="university">International University of Management Namibia</div>
+                    <div class="date">2025 - Present (Expected 2028)</div>
                 </div>
             </div>
         </section>
@@ -179,7 +182,7 @@
                     
                     <div class="form-group">
                         <input type="email" id="email" name="email" required placeholder=" ">
-                        <label for="email">Email Address</label>
+                        <label for="email"><a href="s.j.ananias@gmail.com" target="_blank">Email Address</a></label>
                         <div class="underline"></div>
                     </div>
                     
@@ -193,6 +196,8 @@
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane"></i>
                     </button>
+                    <a href="https://github.com/3-Stax/Feb-2025-Cohort-Hackathon-1_SJAnanias/blob/main/SJAnaniasResumeV2.pdf" download class="download-btn">Download My CV</a>
+                    
                 </form>
             </div>
         </section>
@@ -201,10 +206,17 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-            <a href="mailto:s.j.ananias@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/sj-ananias/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/3-Stax" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:s.j.ananias@gmail.com" 
+            rel="noopener noreferrer"
+            aria-label="Gmail"><i class="fas fa-envelope"></i></a>
         </div>
         <p>&copy; 2025 Stephanus James Ananias. All rights reserved.</p>
     </footer>

@@ -96,3 +96,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     });
 });
+
+// Debounce scroll events
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+    }, 100);
+});
+
+// Lazy load VanillaTilt
+if (document.querySelector('.project-card')) {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js';
+    script.onload = () => {
+        VanillaTilt.init(document.querySelectorAll(".project-card"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2
+        });
+    };
+    document.body.appendChild(script);
+}

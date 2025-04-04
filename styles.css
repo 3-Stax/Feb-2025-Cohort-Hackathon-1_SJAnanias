@@ -1,14 +1,22 @@
 :root {
-    /* Modern Color Palette */
+    /* Colors */
     --primary: #2563eb;
     --secondary: #7c3aed;
     --accent: #ec4899;
+    
+    /* Neutrals */
     --dark: #1e293b;
     --light: #f8fafc;
     --text: #334155;
+    
+    /* Specials */
     --highlight: #f59e0b;
+    
+    /* Gradients */
     --gradient-start: #3b82f6;
     --gradient-end: #8b5cf6;
+    
+    /* Cards */
     --card-bg: rgba(255, 255, 255, 0.85);
 }
 
@@ -52,14 +60,13 @@ ul {
 
 /* Header Styles */
 header {
+    position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
     overflow: hidden;
 }
 
@@ -67,6 +74,45 @@ header {
     max-width: 800px;
     padding: 2rem;
     z-index: 2;
+}
+
+.particles {
+    position: absolute;
+    z-index: 1;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.8) 0%,      /* Blue */
+        rgba(124, 58, 237, 0.8) 100%     /* Purple */
+    );
+    mix-blend-mode: overlay;
+}
+
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/images/IMG_20220723_111446.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: 0;
+    background-attachment: fixed; 
+}
+
+@media (max-width: 768px) {
+    .header-bg {
+        background-attachment: scroll;
+    }
 }
 
 h1 {
@@ -116,6 +162,10 @@ nav ul {
     margin: 0 auto;
     padding: 0 2rem;
 }
+
+main {
+    margin-bottom: 4rem; 
+  }
 
 section {
     padding: 6rem 0;
@@ -209,12 +259,12 @@ h2::after {
     background: white;
     border-radius: 12px;
     padding: 2rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-left: 4px solid var(--primary); 
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -254,6 +304,8 @@ h2::after {
 }
 
 .skill-category {
+    position: relative;
+    overflow: hidden;
     background: white;
     padding: 1.5rem;
     border-radius: 12px;
@@ -282,6 +334,18 @@ h2::after {
     height: 8px;
     background: var(--highlight);
     border-radius: 50%;
+}
+
+.skill-category::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: -1;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    z-index: -1;
 }
 
 /* Skill Bars */
@@ -401,10 +465,11 @@ h2::after {
 
 /* Footer */
 footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     background: var(--dark);
     color: white;
     text-align: center;
-    padding: 4rem 0 2rem;
+    padding: 3rem 0 2rem;
     position: relative;
     margin-top: 4rem;
 }
@@ -425,6 +490,17 @@ footer {
     transform: translateY(-3px);
     color: var(--highlight);
 }
+
+.social-links a:hover i {
+    color: inherit; /* Ensures the icon adopts the parent’s color */
+  }
+
+  a:focus, 
+  button:focus,
+  .social-links a:focus {
+      outline: 2px solid var(--highlight);
+      outline-offset: 3px;
+  }
 
 /* Floating Action Button */
 .fab {
@@ -491,6 +567,11 @@ footer {
     transform: rotate(30deg);
 }
 
+.section-content, #theme-toggle, .back-to-top {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -519,5 +600,17 @@ footer {
     .projects-grid,
     .skills-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .tagline {
+        font-size: 1rem;
+    }
+    .section-content {
+        padding: 1.5rem;
     }
 }
